@@ -131,70 +131,179 @@
             font-style: italic;
         }
 
-        .question-list {
-            list-style: none;
-            padding: 0;
+        .matching-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 15px;
+            margin-bottom: 10px;
         }
 
-        .question-list li {
-            padding: 10px 0;
-            border-bottom: 1px dashed #dee2e6;
+        .matching-item label {
+            flex: 1;
             font-size: 15px;
         }
 
-        .question-list li:last-child {
-            border-bottom: none;
+        .matching-item select {
+            padding: 6px 10px;
+            font-size: 14px;
+            border: 2px solid #3498db;
+            border-radius: 4px;
+            background-color: #ffffff;
+            cursor: pointer;
+            min-width: 200px;
         }
 
-        .question-number {
+        .matching-item select:focus {
+            outline: none;
+            border-color: #2c3e50;
+        }
+
+        .fill-blank {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 15px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .fill-blank .question-number {
             font-weight: bold;
             color: #3498db;
-            margin-right: 8px;
-        }
-
-        .options {
-            list-style: none;
-            padding: 0;
-            margin-top: 8px;
-        }
-
-        .options li {
-            padding: 6px 0;
-            border-bottom: none;
-        }
-
-        .options li::before {
-            content: "";
-        }
-
-        .option-label {
-            font-weight: bold;
-            color: #2c3e50;
             margin-right: 5px;
         }
 
-        .answer-key {
-            background-color: #e8f8f5;
-            border: 2px solid #1abc9c;
-            border-radius: 8px;
-            padding: 20px 25px;
-            margin-top: 20px;
+        .fill-blank input {
+            padding: 6px 10px;
+            font-size: 16px;
+            border: 2px solid #3498db;
+            border-radius: 4px;
+            width: 60px;
+            text-align: center;
+            direction: rtl;
         }
 
-        .answer-key-title {
+        .fill-blank input:focus {
+            outline: none;
+            border-color: #2c3e50;
+        }
+
+        .btn-check {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto;
+            padding: 14px 30px;
             font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-check:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-check:active {
+            transform: translateY(0);
+        }
+
+        .btn-reset {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+            background-color: #ffffff;
+            border: 2px solid #2c3e50;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-reset:hover {
+            background-color: #f0f4f8;
+        }
+
+        .result-box {
+            display: none;
+            background-color: #e8f8f5;
+            border: 3px solid #1abc9c;
+            border-radius: 10px;
+            padding: 25px 30px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result-box.show {
+            display: block;
+        }
+
+        .result-title {
+            font-size: 24px;
             color: #1abc9c;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: bold;
         }
 
-        .answer-key ol {
-            padding-left: 20px;
+        .result-score {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 15px 0;
         }
 
-        .answer-key li {
-            padding: 5px 0;
-            font-size: 15px;
+        .result-message {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .result-detail {
+            font-size: 14px;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .correct {
+            background-color: #d5f5e3 !important;
+            border-color: #27ae60 !important;
+        }
+
+        .incorrect {
+            background-color: #fadbd8 !important;
+            border-color: #e74c3c !important;
+        }
+
+        .feedback {
+            font-size: 13px;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .feedback.correct-text {
+            color: #27ae60;
+        }
+
+        .feedback.incorrect-text {
+            color: #e74c3c;
         }
 
         .tips-box {
@@ -229,33 +338,6 @@
             font-size: 14px;
         }
 
-        .blank-line {
-            display: inline-block;
-            width: 120px;
-            border-bottom: 2px solid #333;
-            margin: 0 5px;
-        }
-
-        .fill-blank {
-            font-size: 16px;
-            margin-bottom: 12px;
-        }
-
-        .matching-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .matching-item {
-            padding: 8px 12px;
-            background-color: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            font-size: 15px;
-        }
-
         @media (max-width: 600px) {
             .content {
                 padding: 20px;
@@ -269,8 +351,15 @@
                 font-size: 22px;
             }
 
-            .matching-grid {
-                grid-template-columns: 1fr;
+            .matching-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .matching-item select {
+                width: 100%;
+                min-width: auto;
             }
 
             .vocab-table th,
@@ -375,115 +464,135 @@
             <!-- Latihan -->
             <div class="section">
                 <h2 class="section-title">B. Latihan Soal</h2>
+                <p style="margin-bottom: 20px; color: #555;">Kerjakan latihan di bawah ini dengan teliti. Setelah selesai, klik tombol <strong>"Periksa Jawaban"</strong> untuk melihat nilaimu!</p>
 
                 <!-- Latihan 1 -->
                 <div class="exercise-box">
-                    <div class="exercise-title">Latihan 1: Menghubungkan Kata</div>
-                    <div class="exercise-instruction">Tariklah garis dari kata bahasa Arab ke artinya yang benar dalam bahasa Indonesia!</div>
+                    <div class="exercise-title">Latihan 1: Menjodohkan Kata</div>
+                    <div class="exercise-instruction">Pilihlah arti yang benar untuk setiap kata bahasa Arab berikut ini!</div>
 
-                    <div class="matching-grid">
-                        <div class="matching-item"><span class="question-number">1.</span> <span class="arabic-text">أَبٌ</span> (Abun)</div>
-                        <div class="matching-item"><span class="question-number">A.</span> Nenek</div>
-
-                        <div class="matching-item"><span class="question-number">2.</span> <span class="arabic-text">جَدٌّ</span> (Jaddun)</div>
-                        <div class="matching-item"><span class="question-number">B.</span> Ayah</div>
-
-                        <div class="matching-item"><span class="question-number">3.</span> <span class="arabic-text">أُخْتٌ</span> (Ukhtun)</div>
-                        <div class="matching-item"><span class="question-number">C.</span> Kakek</div>
-
-                        <div class="matching-item"><span class="question-number">4.</span> <span class="arabic-text">جَدَّةٌ</span> (Jaddatun)</div>
-                        <div class="matching-item"><span class="question-number">D.</span> Bibi (dari pihak Ibu)</div>
-
-                        <div class="matching-item"><span class="question-number">5.</span> <span class="arabic-text">خَالَةٌ</span> (Khalatun)</div>
-                        <div class="matching-item"><span class="question-number">E.</span> Saudara Perempuan</div>
+                    <div class="matching-item" id="match1">
+                        <label><span class="question-number">1.</span> <span class="arabic-text">أَبٌ</span> (Abun)</label>
+                        <select id="answer1">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="A">A. Nenek</option>
+                            <option value="B">B. Ayah</option>
+                            <option value="C">C. Kakek</option>
+                            <option value="D">D. Bibi (dari pihak Ibu)</option>
+                            <option value="E">E. Saudara Perempuan</option>
+                        </select>
                     </div>
+                    <div class="feedback" id="feedback1"></div>
+
+                    <div class="matching-item" id="match2">
+                        <label><span class="question-number">2.</span> <span class="arabic-text">جَدٌّ</span> (Jaddun)</label>
+                        <select id="answer2">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="A">A. Nenek</option>
+                            <option value="B">B. Ayah</option>
+                            <option value="C">C. Kakek</option>
+                            <option value="D">D. Bibi (dari pihak Ibu)</option>
+                            <option value="E">E. Saudara Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="feedback2"></div>
+
+                    <div class="matching-item" id="match3">
+                        <label><span class="question-number">3.</span> <span class="arabic-text">أُخْتٌ</span> (Ukhtun)</label>
+                        <select id="answer3">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="A">A. Nenek</option>
+                            <option value="B">B. Ayah</option>
+                            <option value="C">C. Kakek</option>
+                            <option value="D">D. Bibi (dari pihak Ibu)</option>
+                            <option value="E">E. Saudara Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="feedback3"></div>
+
+                    <div class="matching-item" id="match4">
+                        <label><span class="question-number">4.</span> <span class="arabic-text">جَدَّةٌ</span> (Jaddatun)</label>
+                        <select id="answer4">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="A">A. Nenek</option>
+                            <option value="B">B. Ayah</option>
+                            <option value="C">C. Kakek</option>
+                            <option value="D">D. Bibi (dari pihak Ibu)</option>
+                            <option value="E">E. Saudara Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="feedback4"></div>
+
+                    <div class="matching-item" id="match5">
+                        <label><span class="question-number">5.</span> <span class="arabic-text">خَالَةٌ</span> (Khalatun)</label>
+                        <select id="answer5">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="A">A. Nenek</option>
+                            <option value="B">B. Ayah</option>
+                            <option value="C">C. Kakek</option>
+                            <option value="D">D. Bibi (dari pihak Ibu)</option>
+                            <option value="E">E. Saudara Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="feedback5"></div>
                 </div>
 
                 <!-- Latihan 2 -->
                 <div class="exercise-box">
                     <div class="exercise-title">Latihan 2: Melengkapi Huruf</div>
-                    <div class="exercise-instruction">Isilah huruf yang hilang pada kosakata berikut ini!</div>
+                    <div class="exercise-instruction">Ketiklah huruf Arab yang hilang pada kosakata berikut ini! (Ketik huruf Arabnya)</div>
 
-                    <div class="fill-blank">
-                        <span class="question-number">1.</span> Ayah = <span class="arabic-text">أَ</span><span class="blank-line"></span><span class="arabic-text">ٌ</span> (Abun)
+                    <div class="fill-blank" id="fill1">
+                        <span class="question-number">1.</span>
+                        <span>Ayah = </span>
+                        <span class="arabic-text">أَ</span>
+                        <input type="text" id="input1" placeholder="?" maxlength="2">
+                        <span class="arabic-text">ٌ</span>
+                        <span class="latin-text">(Abun)</span>
                     </div>
-                    <div class="fill-blank">
-                        <span class="question-number">2.</span> Kakek = <span class="arabic-text">جَ</span><span class="blank-line"></span><span class="arabic-text">ٌ</span> (Jaddun)
+                    <div class="feedback" id="feedbackFill1"></div>
+
+                    <div class="fill-blank" id="fill2">
+                        <span class="question-number">2.</span>
+                        <span>Kakek = </span>
+                        <span class="arabic-text">جَ</span>
+                        <input type="text" id="input2" placeholder="?" maxlength="2">
+                        <span class="arabic-text">ٌ</span>
+                        <span class="latin-text">(Jaddun)</span>
                     </div>
-                    <div class="fill-blank">
-                        <span class="question-number">3.</span> Paman = <span class="arabic-text">عَ</span><span class="blank-line"></span><span class="arabic-text">ٌ</span> ('Ammun)
+                    <div class="feedback" id="feedbackFill2"></div>
+
+                    <div class="fill-blank" id="fill3">
+                        <span class="question-number">3.</span>
+                        <span>Paman = </span>
+                        <span class="arabic-text">عَ</span>
+                        <input type="text" id="input3" placeholder="?" maxlength="2">
+                        <span class="arabic-text">ٌ</span>
+                        <span class="latin-text">('Ammun)</span>
                     </div>
-                    <div class="fill-blank">
-                        <span class="question-number">4.</span> Saudara Laki-laki = <span class="arabic-text">أَ</span><span class="blank-line"></span><span class="arabic-text">ٌ</span> (Akhun)
+                    <div class="feedback" id="feedbackFill3"></div>
+
+                    <div class="fill-blank" id="fill4">
+                        <span class="question-number">4.</span>
+                        <span>Saudara Laki-laki = </span>
+                        <span class="arabic-text">أَ</span>
+                        <input type="text" id="input4" placeholder="?" maxlength="2">
+                        <span class="arabic-text">ٌ</span>
+                        <span class="latin-text">(Akhun)</span>
                     </div>
+                    <div class="feedback" id="feedbackFill4"></div>
                 </div>
 
-                <!-- Latihan 3 -->
-                <div class="exercise-box">
-                    <div class="exercise-title">Latihan 3: Pilihan Ganda</div>
-                    <div class="exercise-instruction">Pilihlah jawaban yang paling tepat!</div>
+                <!-- Tombol Periksa -->
+                <button class="btn-check" onclick="checkAnswers()">Periksa Jawaban</button>
+                <button class="btn-reset" onclick="resetAnswers()">Ulangi Latihan</button>
 
-                    <ul class="question-list">
-                        <li>
-                            <span class="question-number">1.</span> Gambar laki-laki tua (Kakek) dalam bahasa Arab adalah...
-                            <ul class="options">
-                                <li><span class="option-label">a.</span> <span class="arabic-text">جَدَّةٌ</span> (Jaddatun)</li>
-                                <li><span class="option-label">b.</span> <span class="arabic-text">جَدٌّ</span> (Jaddun)</li>
-                                <li><span class="option-label">c.</span> <span class="arabic-text">أَبٌ</span> (Abun)</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="question-number">2.</span> Apa arti dari kata <span class="arabic-text">عَمَّةٌ</span> ('Ammatun)?
-                            <ul class="options">
-                                <li><span class="option-label">a.</span> Bibi dari pihak Ayah</li>
-                                <li><span class="option-label">b.</span> Bibi dari pihak Ibu</li>
-                                <li><span class="option-label">c.</span> Nenek</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="question-number">3.</span> Jika kamu ingin memanggil Adik Laki-laki, kamu menggunakan kata...
-                            <ul class="options">
-                                <li><span class="option-label">a.</span> <span class="arabic-text">أُخْتٌ</span> (Ukhtun)</li>
-                                <li><span class="option-label">b.</span> <span class="arabic-text">أَخٌ</span> (Akhun)</li>
-                                <li><span class="option-label">c.</span> <span class="arabic-text">أَبٌ</span> (Abun)</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Kunci Jawaban -->
-            <div class="section">
-                <h2 class="section-title">C. Kunci Jawaban</h2>
-
-                <div class="answer-key">
-                    <div class="answer-key-title">Kunci Jawaban Latihan 1</div>
-                    <ol>
-                        <li><strong>أَبٌ (Abun)</strong> = B. Ayah</li>
-                        <li><strong>جَدٌّ (Jaddun)</strong> = C. Kakek</li>
-                        <li><strong>أُخْتٌ (Ukhtun)</strong> = E. Saudara Perempuan</li>
-                        <li><strong>جَدَّةٌ (Jaddatun)</strong> = A. Nenek</li>
-                        <li><strong>خَالَةٌ (Khalatun)</strong> = D. Bibi dari pihak Ibu</li>
-                    </ol>
-                </div>
-
-                <div class="answer-key" style="margin-top: 15px;">
-                    <div class="answer-key-title">Kunci Jawaban Latihan 2</div>
-                    <ol>
-                        <li>Ayah = <span class="arabic-text">أَبٌ</span> (huruf yang hilang: <span class="arabic-text">ب</span> / Ba)</li>
-                        <li>Kakek = <span class="arabic-text">جَدٌّ</span> (huruf yang hilang: <span class="arabic-text">دّ</span> / Dad)</li>
-                        <li>Paman = <span class="arabic-text">عَمٌّ</span> (huruf yang hilang: <span class="arabic-text">مّ</span> / Mim)</li>
-                        <li>Saudara Laki-laki = <span class="arabic-text">أَخٌ</span> (huruf yang hilang: <span class="arabic-text">خ</span> / Kha)</li>
-                    </ol>
-                </div>
-
-                <div class="answer-key" style="margin-top: 15px;">
-                    <div class="answer-key-title">Kunci Jawaban Latihan 3</div>
-                    <ol>
-                        <li><strong>b.</strong> <span class="arabic-text">جَدٌّ</span> (Jaddun)</li>
-                        <li><strong>a.</strong> Bibi dari pihak Ayah</li>
-                        <li><strong>b.</strong> <span class="arabic-text">أَخٌ</span> (Akhun)</li>
-                    </ol>
+                <!-- Hasil -->
+                <div class="result-box" id="resultBox">
+                    <div class="result-title">Hasil Latihan</div>
+                    <div class="result-score" id="resultScore">0</div>
+                    <div class="result-message" id="resultMessage"></div>
+                    <div class="result-detail" id="resultDetail"></div>
                 </div>
             </div>
 
@@ -503,5 +612,138 @@
             <p>Pembelajaran Bahasa Arab - Kelas 3 SD | Materi: Anggota Keluarga (A'dha-ul Usrah)</p>
         </div>
     </div>
+
+    <script>
+        // Kunci jawaban Latihan 1
+        const correctAnswersMatch = {
+            1: 'B',
+            2: 'C',
+            3: 'E',
+            4: 'A',
+            5: 'D'
+        };
+
+        // Kunci jawaban Latihan 2 (huruf Arab yang hilang)
+        const correctAnswersFill = {
+            1: ['ب', 'بْ'],
+            2: ['دّ', 'د'],
+            3: ['مّ', 'م'],
+            4: ['خ']
+        };
+
+        function checkAnswers() {
+            let score = 0;
+            let totalQuestions = 9; // 5 matching + 4 fill
+            let correctCount = 0;
+
+            // Periksa Latihan 1
+            for (let i = 1; i <= 5; i++) {
+                const select = document.getElementById('answer' + i);
+                const feedback = document.getElementById('feedback' + i);
+                const matchItem = document.getElementById('match' + i);
+
+                if (select.value === correctAnswersMatch[i]) {
+                    score += 10;
+                    correctCount++;
+                    matchItem.classList.add('correct');
+                    matchItem.classList.remove('incorrect');
+                    feedback.textContent = 'Benar!';
+                    feedback.className = 'feedback correct-text';
+                } else if (select.value === '') {
+                    matchItem.classList.remove('correct', 'incorrect');
+                    feedback.textContent = 'Belum dijawab!';
+                    feedback.className = 'feedback incorrect-text';
+                } else {
+                    matchItem.classList.add('incorrect');
+                    matchItem.classList.remove('correct');
+                    feedback.textContent = 'Salah. Jawaban yang benar: ' + getAnswerText(correctAnswersMatch[i]);
+                    feedback.className = 'feedback incorrect-text';
+                }
+            }
+
+            // Periksa Latihan 2
+            for (let i = 1; i <= 4; i++) {
+                const input = document.getElementById('input' + i);
+                const feedback = document.getElementById('feedbackFill' + i);
+                const fillItem = document.getElementById('fill' + i);
+                const userAnswer = input.value.trim();
+
+                if (correctAnswersFill[i].includes(userAnswer)) {
+                    score += 10;
+                    correctCount++;
+                    fillItem.classList.add('correct');
+                    fillItem.classList.remove('incorrect');
+                    feedback.textContent = 'Benar!';
+                    feedback.className = 'feedback correct-text';
+                } else if (userAnswer === '') {
+                    fillItem.classList.remove('correct', 'incorrect');
+                    feedback.textContent = 'Belum dijawab!';
+                    feedback.className = 'feedback incorrect-text';
+                } else {
+                    fillItem.classList.add('incorrect');
+                    fillItem.classList.remove('correct');
+                    feedback.textContent = 'Salah. Jawaban yang benar: ' + correctAnswersFill[i][0];
+                    feedback.className = 'feedback incorrect-text';
+                }
+            }
+
+            // Tampilkan hasil
+            const resultBox = document.getElementById('resultBox');
+            const resultScore = document.getElementById('resultScore');
+            const resultMessage = document.getElementById('resultMessage');
+            const resultDetail = document.getElementById('resultDetail');
+
+            resultBox.classList.add('show');
+            resultScore.textContent = score;
+
+            if (score >= 80) {
+                resultMessage.textContent = 'Hebat! Kamu sangat menguasai materi ini!';
+            } else if (score >= 60) {
+                resultMessage.textContent = 'Bagus! Terus berlatih ya!';
+            } else if (score >= 40) {
+                resultMessage.textContent = 'Lumayan! Ayo belajar lagi!';
+            } else {
+                resultMessage.textContent = 'Jangan menyerah! Coba pelajari materi lagi dan ulangi latihan ini.';
+            }
+
+            resultDetail.textContent = 'Kamu menjawab benar ' + correctCount + ' dari ' + totalQuestions + ' soal.';
+
+            // Scroll ke hasil
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function getAnswerText(letter) {
+            const answers = {
+                'A': 'A. Nenek',
+                'B': 'B. Ayah',
+                'C': 'C. Kakek',
+                'D': 'D. Bibi (dari pihak Ibu)',
+                'E': 'E. Saudara Perempuan'
+            };
+            return answers[letter] || letter;
+        }
+
+        function resetAnswers() {
+            // Reset Latihan 1
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById('answer' + i).value = '';
+                document.getElementById('feedback' + i).textContent = '';
+                document.getElementById('match' + i).classList.remove('correct', 'incorrect');
+            }
+
+            // Reset Latihan 2
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById('input' + i).value = '';
+                document.getElementById('feedbackFill' + i).textContent = '';
+                document.getElementById('fill' + i).classList.remove('correct', 'incorrect');
+            }
+
+            // Sembunyikan hasil
+            document.getElementById('resultBox').classList.remove('show');
+
+            // Scroll ke atas latihan
+            document.querySelector('.exercise-box').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
 </body>
 </html>
