@@ -155,44 +155,10 @@
             border-radius: 4px;
             background-color: #ffffff;
             cursor: pointer;
-            min-width: 200px;
+            min-width: 220px;
         }
 
         .matching-item select:focus {
-            outline: none;
-            border-color: #2c3e50;
-        }
-
-        .fill-blank {
-            display: flex;
-            align-items: center;
-            padding: 10px 12px;
-            background-color: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            font-size: 15px;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .fill-blank .question-number {
-            font-weight: bold;
-            color: #3498db;
-            margin-right: 5px;
-        }
-
-        .fill-blank input {
-            padding: 6px 10px;
-            font-size: 16px;
-            border: 2px solid #3498db;
-            border-radius: 4px;
-            width: 60px;
-            text-align: center;
-            direction: rtl;
-        }
-
-        .fill-blank input:focus {
             outline: none;
             border-color: #2c3e50;
         }
@@ -295,7 +261,9 @@
         .feedback {
             font-size: 13px;
             margin-top: 5px;
+            margin-bottom: 10px;
             font-weight: bold;
+            padding-left: 12px;
         }
 
         .feedback.correct-text {
@@ -464,11 +432,11 @@
             <!-- Latihan -->
             <div class="section">
                 <h2 class="section-title">B. Latihan Soal</h2>
-                <p style="margin-bottom: 20px; color: #555;">Kerjakan latihan di bawah ini dengan teliti. Setelah selesai, klik tombol <strong>"Periksa Jawaban"</strong> untuk melihat nilaimu!</p>
+                <p style="margin-bottom: 20px; color: #555;">Kerjakan latihan di bawah ini dengan teliti. Pilihlah arti yang benar untuk setiap kata bahasa Arab. Setelah selesai, klik tombol <strong>"Periksa Jawaban"</strong> untuk melihat nilaimu!</p>
 
                 <!-- Latihan 1 -->
                 <div class="exercise-box">
-                    <div class="exercise-title">Latihan 1: Menjodohkan Kata</div>
+                    <div class="exercise-title">Latihan: Menjodohkan Kata</div>
                     <div class="exercise-instruction">Pilihlah arti yang benar untuk setiap kata bahasa Arab berikut ini!</div>
 
                     <div class="matching-item" id="match1">
@@ -478,8 +446,10 @@
                             <option value="A">A. Nenek</option>
                             <option value="B">B. Ayah</option>
                             <option value="C">C. Kakek</option>
-                            <option value="D">D. Bibi (dari pihak Ibu)</option>
-                            <option value="E">E. Saudara Perempuan</option>
+                            <option value="D">D. Paman</option>
+                            <option value="E">E. Saudara Laki-laki</option>
+                            <option value="F">F. Bibi (dari pihak Ayah)</option>
+                            <option value="G">G. Bibi (dari pihak Ibu)</option>
                         </select>
                     </div>
                     <div class="feedback" id="feedback1"></div>
@@ -491,8 +461,10 @@
                             <option value="A">A. Nenek</option>
                             <option value="B">B. Ayah</option>
                             <option value="C">C. Kakek</option>
-                            <option value="D">D. Bibi (dari pihak Ibu)</option>
-                            <option value="E">E. Saudara Perempuan</option>
+                            <option value="D">D. Paman</option>
+                            <option value="E">E. Saudara Laki-laki</option>
+                            <option value="F">F. Bibi (dari pihak Ayah)</option>
+                            <option value="G">G. Bibi (dari pihak Ibu)</option>
                         </select>
                     </div>
                     <div class="feedback" id="feedback2"></div>
@@ -504,8 +476,10 @@
                             <option value="A">A. Nenek</option>
                             <option value="B">B. Ayah</option>
                             <option value="C">C. Kakek</option>
-                            <option value="D">D. Bibi (dari pihak Ibu)</option>
-                            <option value="E">E. Saudara Perempuan</option>
+                            <option value="D">D. Paman</option>
+                            <option value="E">E. Saudara Laki-laki</option>
+                            <option value="F">F. Bibi (dari pihak Ayah)</option>
+                            <option value="G">G. Saudara Perempuan</option>
                         </select>
                     </div>
                     <div class="feedback" id="feedback3"></div>
@@ -517,8 +491,10 @@
                             <option value="A">A. Nenek</option>
                             <option value="B">B. Ayah</option>
                             <option value="C">C. Kakek</option>
-                            <option value="D">D. Bibi (dari pihak Ibu)</option>
-                            <option value="E">E. Saudara Perempuan</option>
+                            <option value="D">D. Paman</option>
+                            <option value="E">E. Saudara Laki-laki</option>
+                            <option value="F">F. Bibi (dari pihak Ayah)</option>
+                            <option value="G">G. Bibi (dari pihak Ibu)</option>
                         </select>
                     </div>
                     <div class="feedback" id="feedback4"></div>
@@ -530,57 +506,43 @@
                             <option value="A">A. Nenek</option>
                             <option value="B">B. Ayah</option>
                             <option value="C">C. Kakek</option>
-                            <option value="D">D. Bibi (dari pihak Ibu)</option>
-                            <option value="E">E. Saudara Perempuan</option>
+                            <option value="D">D. Paman</option>
+                            <option value="E">E. Saudara Laki-laki</option>
+                            <option value="F">F. Bibi (dari pihak Ayah)</option>
+                            <option value="G">G. Bibi (dari pihak Ibu)</option>
                         </select>
                     </div>
                     <div class="feedback" id="feedback5"></div>
-                </div>
 
-                <!-- Latihan 2 -->
-                <div class="exercise-box">
-                    <div class="exercise-title">Latihan 2: Melengkapi Huruf</div>
-                    <div class="exercise-instruction">Ketiklah huruf Arab yang hilang pada kosakata berikut ini! (Ketik huruf Arabnya)</div>
-
-                    <div class="fill-blank" id="fill1">
-                        <span class="question-number">1.</span>
-                        <span>Ayah = </span>
-                        <span class="arabic-text">أَ</span>
-                        <input type="text" id="input1" placeholder="?" maxlength="2">
-                        <span class="arabic-text">ٌ</span>
-                        <span class="latin-text">(Abun)</span>
+                    <div class="matching-item" id="match6">
+                        <label><span class="question-number">6.</span> <span class="arabic-text">عَمٌّ</span> ('Ammun)</label>
+                        <select id="answer6">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="A">A. Nenek</option>
+                            <option value="B">B. Ayah</option>
+                            <option value="C">C. Kakek</option>
+                            <option value="D">D. Paman</option>
+                            <option value="E">E. Saudara Laki-laki</option>
+                            <option value="F">F. Bibi (dari pihak Ayah)</option>
+                            <option value="G">G. Bibi (dari pihak Ibu)</option>
+                        </select>
                     </div>
-                    <div class="feedback" id="feedbackFill1"></div>
+                    <div class="feedback" id="feedback6"></div>
 
-                    <div class="fill-blank" id="fill2">
-                        <span class="question-number">2.</span>
-                        <span>Kakek = </span>
-                        <span class="arabic-text">جَ</span>
-                        <input type="text" id="input2" placeholder="?" maxlength="2">
-                        <span class="arabic-text">ٌ</span>
-                        <span class="latin-text">(Jaddun)</span>
+                    <div class="matching-item" id="match7">
+                        <label><span class="question-number">7.</span> <span class="arabic-text">أَخٌ</span> (Akhun)</label>
+                        <select id="answer7">
+                            <option value="">-- Pilih Jawaban --</option>
+                            <option value="A">A. Nenek</option>
+                            <option value="B">B. Ayah</option>
+                            <option value="C">C. Kakek</option>
+                            <option value="D">D. Paman</option>
+                            <option value="E">E. Saudara Laki-laki</option>
+                            <option value="F">F. Bibi (dari pihak Ayah)</option>
+                            <option value="G">G. Bibi (dari pihak Ibu)</option>
+                        </select>
                     </div>
-                    <div class="feedback" id="feedbackFill2"></div>
-
-                    <div class="fill-blank" id="fill3">
-                        <span class="question-number">3.</span>
-                        <span>Paman = </span>
-                        <span class="arabic-text">عَ</span>
-                        <input type="text" id="input3" placeholder="?" maxlength="2">
-                        <span class="arabic-text">ٌ</span>
-                        <span class="latin-text">('Ammun)</span>
-                    </div>
-                    <div class="feedback" id="feedbackFill3"></div>
-
-                    <div class="fill-blank" id="fill4">
-                        <span class="question-number">4.</span>
-                        <span>Saudara Laki-laki = </span>
-                        <span class="arabic-text">أَ</span>
-                        <input type="text" id="input4" placeholder="?" maxlength="2">
-                        <span class="arabic-text">ٌ</span>
-                        <span class="latin-text">(Akhun)</span>
-                    </div>
-                    <div class="feedback" id="feedbackFill4"></div>
+                    <div class="feedback" id="feedback7"></div>
                 </div>
 
                 <!-- Tombol Periksa -->
@@ -614,36 +576,50 @@
     </div>
 
     <script>
-        // Kunci jawaban Latihan 1
+        // Kunci jawaban Latihan (7 soal)
         const correctAnswersMatch = {
-            1: 'B',
-            2: 'C',
-            3: 'E',
-            4: 'A',
-            5: 'D'
+            1: 'B',  // أَبٌ = Ayah
+            2: 'C',  // جَدٌّ = Kakek
+            3: 'G',  // أُخْتٌ = Saudara Perempuan
+            4: 'A',  // جَدَّةٌ = Nenek
+            5: 'G',  // خَالَةٌ = Bibi (dari pihak Ibu)
+            6: 'D',  // عَمٌّ = Paman
+            7: 'E'   // أَخٌ = Saudara Laki-laki
         };
 
-        // Kunci jawaban Latihan 2 (huruf Arab yang hilang)
-        const correctAnswersFill = {
-            1: ['ب', 'بْ'],
-            2: ['دّ', 'د'],
-            3: ['مّ', 'م'],
-            4: ['خ']
+        // Teks jawaban untuk feedback
+        const answerTexts = {
+            'A': 'A. Nenek',
+            'B': 'B. Ayah',
+            'C': 'C. Kakek',
+            'D': 'D. Paman',
+            'E': 'E. Saudara Laki-laki',
+            'F': 'F. Bibi (dari pihak Ayah)',
+            'G': 'G. Bibi (dari pihak Ibu) / Saudara Perempuan'
+        };
+
+        // Koreksi teks jawaban per soal
+        const answerTextsPerQuestion = {
+            1: { 'B': 'B. Ayah' },
+            2: { 'C': 'C. Kakek' },
+            3: { 'G': 'G. Saudara Perempuan' },
+            4: { 'A': 'A. Nenek' },
+            5: { 'G': 'G. Bibi (dari pihak Ibu)' },
+            6: { 'D': 'D. Paman' },
+            7: { 'E': 'E. Saudara Laki-laki' }
         };
 
         function checkAnswers() {
-            let score = 0;
-            let totalQuestions = 9; // 5 matching + 4 fill
             let correctCount = 0;
+            const totalQuestions = 7;
 
-            // Periksa Latihan 1
-            for (let i = 1; i <= 5; i++) {
+            // Periksa setiap soal
+            for (let i = 1; i <= totalQuestions; i++) {
                 const select = document.getElementById('answer' + i);
                 const feedback = document.getElementById('feedback' + i);
                 const matchItem = document.getElementById('match' + i);
 
                 if (select.value === correctAnswersMatch[i]) {
-                    score += 10;
                     correctCount++;
                     matchItem.classList.add('correct');
                     matchItem.classList.remove('incorrect');
@@ -656,36 +632,14 @@
                 } else {
                     matchItem.classList.add('incorrect');
                     matchItem.classList.remove('correct');
-                    feedback.textContent = 'Salah. Jawaban yang benar: ' + getAnswerText(correctAnswersMatch[i]);
+                    const correctText = answerTextsPerQuestion[i][correctAnswersMatch[i]];
+                    feedback.textContent = 'Salah. Jawaban yang benar: ' + correctText;
                     feedback.className = 'feedback incorrect-text';
                 }
             }
 
-            // Periksa Latihan 2
-            for (let i = 1; i <= 4; i++) {
-                const input = document.getElementById('input' + i);
-                const feedback = document.getElementById('feedbackFill' + i);
-                const fillItem = document.getElementById('fill' + i);
-                const userAnswer = input.value.trim();
-
-                if (correctAnswersFill[i].includes(userAnswer)) {
-                    score += 10;
-                    correctCount++;
-                    fillItem.classList.add('correct');
-                    fillItem.classList.remove('incorrect');
-                    feedback.textContent = 'Benar!';
-                    feedback.className = 'feedback correct-text';
-                } else if (userAnswer === '') {
-                    fillItem.classList.remove('correct', 'incorrect');
-                    feedback.textContent = 'Belum dijawab!';
-                    feedback.className = 'feedback incorrect-text';
-                } else {
-                    fillItem.classList.add('incorrect');
-                    fillItem.classList.remove('correct');
-                    feedback.textContent = 'Salah. Jawaban yang benar: ' + correctAnswersFill[i][0];
-                    feedback.className = 'feedback incorrect-text';
-                }
-            }
+            // Hitung skor (skala 100)
+            const score = Math.round((correctCount / totalQuestions) * 100);
 
             // Tampilkan hasil
             const resultBox = document.getElementById('resultBox');
@@ -696,7 +650,9 @@
             resultBox.classList.add('show');
             resultScore.textContent = score;
 
-            if (score >= 80) {
+            if (score === 100) {
+                resultMessage.textContent = 'Sempurna! Kamu luar biasa!';
+            } else if (score >= 80) {
                 resultMessage.textContent = 'Hebat! Kamu sangat menguasai materi ini!';
             } else if (score >= 60) {
                 resultMessage.textContent = 'Bagus! Terus berlatih ya!';
@@ -712,30 +668,14 @@
             resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
-        function getAnswerText(letter) {
-            const answers = {
-                'A': 'A. Nenek',
-                'B': 'B. Ayah',
-                'C': 'C. Kakek',
-                'D': 'D. Bibi (dari pihak Ibu)',
-                'E': 'E. Saudara Perempuan'
-            };
-            return answers[letter] || letter;
-        }
-
         function resetAnswers() {
-            // Reset Latihan 1
-            for (let i = 1; i <= 5; i++) {
+            const totalQuestions = 7;
+
+            // Reset semua soal
+            for (let i = 1; i <= totalQuestions; i++) {
                 document.getElementById('answer' + i).value = '';
                 document.getElementById('feedback' + i).textContent = '';
                 document.getElementById('match' + i).classList.remove('correct', 'incorrect');
-            }
-
-            // Reset Latihan 2
-            for (let i = 1; i <= 4; i++) {
-                document.getElementById('input' + i).value = '';
-                document.getElementById('feedbackFill' + i).textContent = '';
-                document.getElementById('fill' + i).classList.remove('correct', 'incorrect');
             }
 
             // Sembunyikan hasil
