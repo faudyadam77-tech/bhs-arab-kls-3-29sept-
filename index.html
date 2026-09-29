@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembelajaran Bahasa Arab - Anggota Keluarga</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: #ffffff;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 15px 20px;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .vocab-table thead {
+            background-color: #2c3e50;
+            color: #ffffff;
+        }
+
+        .vocab-table th,
+        .vocab-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border: 1px solid #dee2e6;
+        }
+
+        .vocab-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .vocab-table tbody tr:hover {
+            background-color: #e8f4fd;
+        }
+
+        .arabic-text {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            direction: rtl;
+        }
+
+        .latin-text {
+            font-style: italic;
+            color: #666;
+        }
+
+        .exercise-box {
+            background-color: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+        }
+
+        .exercise-title {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .exercise-instruction {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .question-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .question-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #dee2e6;
+            font-size: 15px;
+        }
+
+        .question-list li:last-child {
+            border-bottom: none;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #3498db;
+            margin-right: 8px;
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+
+        .options li {
+            padding: 6px 0;
+            border-bottom: none;
+        }
+
+        .options li::before {
+            content: "";
+        }
+
+        .option-label {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-right: 5px;
+        }
+
+        .answer-key {
+            background-color: #e8f8f5;
+            border: 2px solid #1abc9c;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-top: 20px;
+        }
+
+        .answer-key-title {
+            font-size: 18px;
+            color: #1abc9c;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .answer-key ol {
+            padding-left: 20px;
+        }
+
+        .answer-key li {
+            padding: 5px 0;
+            font-size: 15px;
+        }
+
+        .tips-box {
+            background-color: #fef9e7;
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-top: 25px;
+        }
+
+        .tips-title {
+            font-size: 18px;
+            color: #f39c12;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .tips-box ul {
+            padding-left: 20px;
+        }
+
+        .tips-box li {
+            padding: 5px 0;
+            font-size: 15px;
+        }
+
+        .footer {
+            background-color: #2c3e50;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        .blank-line {
+            display: inline-block;
+            width: 120px;
+            border-bottom: 2px solid #333;
+            margin: 0 5px;
+        }
+
+        .fill-blank {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .matching-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .matching-item {
+            padding: 8px 12px;
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 20px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .matching-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vocab-table th,
+            .vocab-table td {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Pembelajaran Bahasa Arab</h1>
+            <p>Kelas 3 SD - Anggota Keluarga (A'dha-ul Usrah)</p>
+        </div>
+
+        <div class="content">
+            <!-- Materi -->
+            <div class="section">
+                <h2 class="section-title">A. Materi Pembelajaran</h2>
+
+                <div class="intro-text">
+                    <strong>Halo Anak-anak Hebat!</strong><br>
+                    Hari ini kita akan belajar mengenal anggota keluarga dalam bahasa Arab. Perhatikan gambar di bukumu, lalu ikuti penjelasan di bawah ini. Ayo kita hafalkan bersama-sama!
+                </div>
+
+                <h3 style="margin-bottom: 15px; color: #2c3e50;">Daftar Kosakata (Mufrodat)</h3>
+
+                <table class="vocab-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">No</th>
+                            <th style="width: 20%;">Bahasa Arab</th>
+                            <th style="width: 20%;">Cara Baca</th>
+                            <th style="width: 25%;">Artinya</th>
+                            <th style="width: 30%;">Ciri di Gambar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="arabic-text">أَبٌ</td>
+                            <td class="latin-text">Abun</td>
+                            <td>Ayah</td>
+                            <td>Laki-laki dewasa memakai kacamata dan baju hijau</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="arabic-text">أُخْتٌ</td>
+                            <td class="latin-text">Ukhtun</td>
+                            <td>Saudara Perempuan (Kakak/Adik Perempuan)</td>
+                            <td>Gadis kecil sedang melambaikan tangan</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="arabic-text">أَخٌ</td>
+                            <td class="latin-text">Akhun</td>
+                            <td>Saudara Laki-laki (Kakak/Adik Laki-laki)</td>
+                            <td>Anak laki-laki memakai peci putih sedang melambaikan tangan</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="arabic-text">عَمٌّ</td>
+                            <td class="latin-text">'Ammun</td>
+                            <td>Paman (Saudara laki-laki dari Ayah)</td>
+                            <td>Laki-laki dewasa memakai peci putih</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td class="arabic-text">عَمَّةٌ</td>
+                            <td class="latin-text">'Ammatun</td>
+                            <td>Bibi (Saudara perempuan dari Ayah)</td>
+                            <td>Wanita memakai jilbab biru</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td class="arabic-text">خَالَةٌ</td>
+                            <td class="latin-text">Khalatun</td>
+                            <td>Bibi (Saudara perempuan dari Ibu)</td>
+                            <td>Wanita memakai jilbab ungu sedang tersenyum</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td class="arabic-text">جَدٌّ</td>
+                            <td class="latin-text">Jaddun</td>
+                            <td>Kakek</td>
+                            <td>Laki-laki tua berjanggut putih memakai peci hijau</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td class="arabic-text">جَدَّةٌ</td>
+                            <td class="latin-text">Jaddatun</td>
+                            <td>Nenek</td>
+                            <td>Wanita tua memakai kacamata dan jilbab</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Latihan -->
+            <div class="section">
+                <h2 class="section-title">B. Latihan Soal</h2>
+
+                <!-- Latihan 1 -->
+                <div class="exercise-box">
+                    <div class="exercise-title">Latihan 1: Menghubungkan Kata</div>
+                    <div class="exercise-instruction">Tariklah garis dari kata bahasa Arab ke artinya yang benar dalam bahasa Indonesia!</div>
+
+                    <div class="matching-grid">
+                        <div class="matching-item"><span class="question-number">1.</span> <span class="arabic-text">أَبٌ</span> (Abun)</div>
+                        <div class="matching-item"><span class="question-number">A.</span> Nenek</div>
+
+                        <div class="matching-item"><span class="question-number">2.</span> <span class="arabic-text">جَدٌّ</span> (Jaddun)</div>
+                        <div class="matching-item"><span class="question-number">B.</span> Ayah</div>
+
+                        <div class="matching-item"><span class="question-number">3.</span> <span class="arabic-text">أُخْتٌ</span> (Ukhtun)</div>
+                        <div class="matching-item"><span class="question-number">C.</span> Kakek</div>
+
+                        <div class="matching-item"><span class="question-number">4.</span> <span class="arabic-text">جَدَّةٌ</span> (Jaddatun)</div>
+                        <div class="matching-item"><span class="question-number">D.</span> Bibi (dari pihak Ibu)</div>
+
+                        <div class="matching-item"><span class="question-number">5.</span> <span class="arabic-text">خَالَةٌ</span> (Khalatun)</div>
+                        <div class="matching-item"><span class="question-number">E.</span> Saudara Perempuan</div>
+                    </div>
+                </div>
+
+                <!-- Latihan 2 -->
+                <div class="exercise-box">
+                    <div class="exercise-title">Latihan 2: Melengkapi Huruf</div>
+                    <div class="exercise-instruction">Isilah huruf yang hilang pada kosakata berikut ini!</div>
+
+                    <div class="fill-blank">
+                        <span class="question-number">1.</span> Ayah = <span class="arabic-text">أَ</span><span class="blank-line"></span><span class="arabic-text">ٌ</span> (Abun)
+                    </div>
+                    <div class="fill-blank">
+                        <span class="question-number">2.</span> Kakek = <span class="arabic-text">جَ</span><span class="blank-line"></span><span class="arabic-text">ٌ</span> (Jaddun)
+                    </div>
+                    <div class="fill-blank">
+                        <span class="question-number">3.</span> Paman = <span class="arabic-text">عَ</span><span class="blank-line"></span><span class="arabic-text">ٌ</span> ('Ammun)
+                    </div>
+                    <div class="fill-blank">
+                        <span class="question-number">4.</span> Saudara Laki-laki = <span class="arabic-text">أَ</span><span class="blank-line"></span><span class="arabic-text">ٌ</span> (Akhun)
+                    </div>
+                </div>
+
+                <!-- Latihan 3 -->
+                <div class="exercise-box">
+                    <div class="exercise-title">Latihan 3: Pilihan Ganda</div>
+                    <div class="exercise-instruction">Pilihlah jawaban yang paling tepat!</div>
+
+                    <ul class="question-list">
+                        <li>
+                            <span class="question-number">1.</span> Gambar laki-laki tua (Kakek) dalam bahasa Arab adalah...
+                            <ul class="options">
+                                <li><span class="option-label">a.</span> <span class="arabic-text">جَدَّةٌ</span> (Jaddatun)</li>
+                                <li><span class="option-label">b.</span> <span class="arabic-text">جَدٌّ</span> (Jaddun)</li>
+                                <li><span class="option-label">c.</span> <span class="arabic-text">أَبٌ</span> (Abun)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="question-number">2.</span> Apa arti dari kata <span class="arabic-text">عَمَّةٌ</span> ('Ammatun)?
+                            <ul class="options">
+                                <li><span class="option-label">a.</span> Bibi dari pihak Ayah</li>
+                                <li><span class="option-label">b.</span> Bibi dari pihak Ibu</li>
+                                <li><span class="option-label">c.</span> Nenek</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="question-number">3.</span> Jika kamu ingin memanggil Adik Laki-laki, kamu menggunakan kata...
+                            <ul class="options">
+                                <li><span class="option-label">a.</span> <span class="arabic-text">أُخْتٌ</span> (Ukhtun)</li>
+                                <li><span class="option-label">b.</span> <span class="arabic-text">أَخٌ</span> (Akhun)</li>
+                                <li><span class="option-label">c.</span> <span class="arabic-text">أَبٌ</span> (Abun)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Kunci Jawaban -->
+            <div class="section">
+                <h2 class="section-title">C. Kunci Jawaban</h2>
+
+                <div class="answer-key">
+                    <div class="answer-key-title">Kunci Jawaban Latihan 1</div>
+                    <ol>
+                        <li><strong>أَبٌ (Abun)</strong> = B. Ayah</li>
+                        <li><strong>جَدٌّ (Jaddun)</strong> = C. Kakek</li>
+                        <li><strong>أُخْتٌ (Ukhtun)</strong> = E. Saudara Perempuan</li>
+                        <li><strong>جَدَّةٌ (Jaddatun)</strong> = A. Nenek</li>
+                        <li><strong>خَالَةٌ (Khalatun)</strong> = D. Bibi dari pihak Ibu</li>
+                    </ol>
+                </div>
+
+                <div class="answer-key" style="margin-top: 15px;">
+                    <div class="answer-key-title">Kunci Jawaban Latihan 2</div>
+                    <ol>
+                        <li>Ayah = <span class="arabic-text">أَبٌ</span> (huruf yang hilang: <span class="arabic-text">ب</span> / Ba)</li>
+                        <li>Kakek = <span class="arabic-text">جَدٌّ</span> (huruf yang hilang: <span class="arabic-text">دّ</span> / Dad)</li>
+                        <li>Paman = <span class="arabic-text">عَمٌّ</span> (huruf yang hilang: <span class="arabic-text">مّ</span> / Mim)</li>
+                        <li>Saudara Laki-laki = <span class="arabic-text">أَخٌ</span> (huruf yang hilang: <span class="arabic-text">خ</span> / Kha)</li>
+                    </ol>
+                </div>
+
+                <div class="answer-key" style="margin-top: 15px;">
+                    <div class="answer-key-title">Kunci Jawaban Latihan 3</div>
+                    <ol>
+                        <li><strong>b.</strong> <span class="arabic-text">جَدٌّ</span> (Jaddun)</li>
+                        <li><strong>a.</strong> Bibi dari pihak Ayah</li>
+                        <li><strong>b.</strong> <span class="arabic-text">أَخٌ</span> (Akhun)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Tips Belajar -->
+            <div class="tips-box">
+                <div class="tips-title">Tips Belajar</div>
+                <ul>
+                    <li>Ajak anak menunjuk anggota keluarga di rumah sambil menyebutkan bahasa Arabnya. Contoh: Menunjuk Ayah sambil bilang "Abun!"</li>
+                    <li>Lakukan dengan nada yang ceria agar anak tidak bosan.</li>
+                    <li>Ulangi hafalan setiap hari selama 10 menit agar kosakata lebih mudah diingat.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Pembelajaran Bahasa Arab - Kelas 3 SD | Materi: Anggota Keluarga (A'dha-ul Usrah)</p>
+        </div>
+    </div>
+</body>
+</html>
